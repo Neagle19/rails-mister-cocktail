@@ -1,0 +1,6 @@
+<h2>Our top rated cocktails are:</h2>
+<ul>
+  <% @cocktails_top.each do |cocktail| %>
+  <li><%= cocktail.name %> <%= cocktail.rating %></li>
+  <% end %>
+</ul>
