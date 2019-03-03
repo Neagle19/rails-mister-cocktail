@@ -5,6 +5,8 @@
 <h2><%= @cocktail.name %></h2>
 <h3>Rating (1-5): <%= @cocktail.rating %></h3>
 
+<p><%= link_to "Delete this cocktail", cocktail_path(@cocktail), method: :delete %></p>
+
 <p><%= link_to "Go Home", cocktails_path %></p>
 
 

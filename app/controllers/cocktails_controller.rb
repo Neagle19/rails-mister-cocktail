@@ -1,12 +1,11 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show]
+  before_action :set_cocktail, only: [:show, :destroy]
 
   def index
     @cocktails = Cocktail.all
   end
 
   def show
-    @cocktail = Cocktail.find(params[:id])
   end
 
   def new
@@ -24,6 +23,11 @@ class CocktailsController < ApplicationController
 
   def top
     @cocktails_top = Cocktail.where(rating: 5)
+  end
+
+  def destroy
+    @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   private
